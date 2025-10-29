@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-import AboutPage from "./pages/AboutPage.jsx";
-import ProfilePage from "./pages/ProfilePage.jsx";
+import AboutPage from "./src/pages/AboutPage.jsx";
+import ProfilePage from "./src/pages/ProfilePage.js";
 
 function MyButton() {
     return (
