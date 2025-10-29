@@ -1,4 +1,7 @@
 import React from "react";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import AboutPage from "./pages/AboutPage.jsx";
+import ProfilePage from "./pages/ProfilePage.jsx";
 
 function MyButton() {
     return (
@@ -8,9 +11,25 @@ function MyButton() {
 
 export default function MyApp() {
     return (
-        <div>
-            <h1>Welcome to my app</h1>
-            <MyButton />
-        </div>
+        <BrowserRouter>
+            <nav style={{ marginBottem: "1rem"}}>
+                <Link to="/">Home</Link> | <Link to="/about">About</Link>
+                <Link to="/profile">Profile</Link>
+            </nav>
+
+            <Routes>
+                <Route 
+                    path="/"
+                    element={
+                        <div>
+                            <h1>Welcome to my app</h1>
+                            <MyButton />
+                        </div>
+                    }
+                />
+                <Route path="/about" element={<AboutPage />} />
+                <Route path="/profile" element={<ProfilePage />} />
+            </Routes>
+        </BrowserRouter>
     );
 }
